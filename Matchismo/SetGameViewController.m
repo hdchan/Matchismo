@@ -1,23 +1,22 @@
 //
-//  CardGameViewController.m
+//  SetGameViewController.m
 //  Matchismo
 //
-//  Created by Henry Chan on 4/5/13.
+//  Created by The Doctor's Channel on 10/28/13.
 //  Copyright (c) 2013 Henry Chan. All rights reserved.
 //
 
-#import "CardGameViewController.h"
-#import "PlayingCardDeck.h"
+#import "SetGameViewController.h"
+#import "SetCardDeck.h"
 #import "CardMatchingGame.h"
 
-@interface CardGameViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *flipsLabel; // weak because we dont need a reference to it if the view is gone...
-//control clicked dragged the proper from the label into here
+@interface SetGameViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *flipsLabel; 
 
 @property (nonatomic) int flipCount;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons; // all buttons in this array has a strong pointer
-//@property (strong, nonatomic) Deck *deck; // we're going to get the number of cards in the card button array
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
@@ -25,33 +24,28 @@
 
 @end
 
-@implementation CardGameViewController
+@implementation SetGameViewController
 
 - (CardMatchingGame *)game {
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                                         usingDeck:[[PlayingCardDeck alloc] init]];
-    _game.matchCountMode = 1;
+                                                          usingDeck:[[SetCardDeck alloc] init]];
+    _game.matchCountMode = 2;
     return _game;
 }
 
-
-
-/*- (Deck *)deck {
-    if (!_deck) _deck = [[PlayingCardDeck alloc] init];
-    return _deck;
-}*/
 - (void)setCardButtons:(NSArray *)cardButtons { // setter for @property cardButtons
     
     _cardButtons = cardButtons;
     /*for (UIButton *cardButton in self.cardButtons) {
-        
-        Card *card = [self.deck drawRandomCard]; // deck method
-        
-        [cardButton setTitle:card.contents forState:UIControlStateSelected];
-        
-    }*/
+     
+     Card *card = [self.deck drawRandomCard]; // deck method
+     
+     [cardButton setTitle:card.contents forState:UIControlStateSelected];
+     
+     }*/
     [self updateUI];
 }
+
 - (void)updateUI { // take state of model and reflect it in the UI
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
@@ -92,23 +86,33 @@
 - (IBAction)flipCard:(UIButton *)sender { // created this by control clicking the button and dragging it in here
     
     /*if (sender.isSelected) {
-        sender.selected = NO;
-    } else {
-        sender.selected = YES;
-    }*/
+     sender.selected = NO;
+     } else {
+     sender.selected = YES;
+     }*/
     
     //alternative code
     //sender.selected = !sender.isSelected;
     
-   
+    
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]]; // sender of button
     //here we're telling the model look like the UI
     
     self.flipCount++;
     
     [self updateUI];
-
+    
 }
+
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+   
+}
+
 
 
 @end

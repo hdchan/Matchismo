@@ -48,7 +48,7 @@
                     
                     [self.otherCards addObject:otherCard];
                     
-                    if (self.otherCards.count == self.matchCountMode+1) {
+                    if (self.otherCards.count == self.matchCountMode) {
                         break;
                     }
                 }
@@ -57,7 +57,7 @@
             int matchScore = [card match:self.otherCards];
             
             
-            if (matchScore && self.otherCards.count == self.matchCountMode+1) {
+            if (matchScore && self.otherCards.count == self.matchCountMode) {
                 card.unplayable = YES;
                 
                 NSString *cardContents = @"";
@@ -71,7 +71,7 @@
                 self.flipDescription = [NSString stringWithFormat:@"%@%@ match! +%d points!",card.contents,cardContents, matchScore * MATCH_BONUS];
                 
             }
-            else if(!matchScore && self.otherCards.count == self.matchCountMode+1){
+            else if(!matchScore && self.otherCards.count == self.matchCountMode){
                 
                 NSString *cardContents = @"";
                 
