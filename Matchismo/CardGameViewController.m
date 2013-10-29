@@ -8,7 +8,7 @@
 
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
-#import "CardMatchingGame.h"
+
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel; // weak because we dont need a reference to it if the view is gone...
@@ -16,10 +16,10 @@
 
 @property (nonatomic) int flipCount;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons; // all buttons in this array has a strong pointer
+//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons; // all buttons in this array has a strong pointer
 //@property (strong, nonatomic) Deck *deck; // we're going to get the number of cards in the card button array
 
-@property (strong, nonatomic) CardMatchingGame *game;
+//@property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flipDescriptionLabel;
 
@@ -27,12 +27,12 @@
 
 @implementation CardGameViewController
 
-- (CardMatchingGame *)game {
+/*- (CardMatchingGame *)game {
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                          usingDeck:[[PlayingCardDeck alloc] init]];
     _game.matchCountMode = 1;
     return _game;
-}
+}*/
 
 
 
@@ -63,7 +63,7 @@
         cardButton.alpha = (card.isUnPlayable ? 0.3 : 1.0);
         
         
-        if (!cardButton.selected){
+        /*if (!cardButton.selected){
             [cardButton setTitle:nil forState:UIControlStateNormal];
             UIImage *cardBackImage = [UIImage imageNamed:@"cardback.jpg"];
             [cardButton setImage:cardBackImage forState:UIControlStateNormal];
@@ -71,7 +71,7 @@
         }
         else {
             [cardButton setImage:nil forState:UIControlStateNormal];
-        }
+        }*/
     }
     self.flipDescriptionLabel.text = self.game.flipDescription;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];

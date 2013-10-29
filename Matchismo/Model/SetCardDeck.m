@@ -27,8 +27,6 @@
                     card.color = color;
                     card.count = count;
                     [self addCard:card atTop:YES];
-                    card.filled = YES;
-                    [self addCard:card atTop:YES];
                 }
             }
         }

@@ -27,6 +27,7 @@
 		98D514EB181EDD2E00775834 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D514EA181EDD2D00775834 /* SetCard.m */; };
 		98D514EE181EDD4600775834 /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D514ED181EDD4600775834 /* SetCardDeck.m */; };
 		98D514F1181EFEEB00775834 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D514F0181EFEEB00775834 /* SetGameViewController.m */; };
+		98EED4A51820193B0087E89C /* PlayingCardMatchGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EED4A41820193B0087E89C /* PlayingCardMatchGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		98D514ED181EDD4600775834 /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCardDeck.m; path = Model/SetCardDeck.m; sourceTree = "<group>"; };
 		98D514EF181EFEEB00775834 /* SetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
 		98D514F0181EFEEB00775834 /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
+		98EED4A31820193B0087E89C /* PlayingCardMatchGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardMatchGameViewController.h; sourceTree = "<group>"; };
+		98EED4A41820193B0087E89C /* PlayingCardMatchGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardMatchGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				72594B4A170FC56100AAEC50 /* MainStoryboard.storyboard */,
 				72594B4D170FC56100AAEC50 /* CardGameViewController.h */,
 				72594B4E170FC56100AAEC50 /* CardGameViewController.m */,
+				98EED4A31820193B0087E89C /* PlayingCardMatchGameViewController.h */,
+				98EED4A41820193B0087E89C /* PlayingCardMatchGameViewController.m */,
 				98D514EF181EFEEB00775834 /* SetGameViewController.h */,
 				98D514F0181EFEEB00775834 /* SetGameViewController.m */,
 				72594B39170FC56100AAEC50 /* Supporting Files */,
@@ -237,6 +242,7 @@
 				98D514EB181EDD2E00775834 /* SetCard.m in Sources */,
 				98D514EE181EDD4600775834 /* SetCardDeck.m in Sources */,
 				98D514F1181EFEEB00775834 /* SetGameViewController.m in Sources */,
+				98EED4A51820193B0087E89C /* PlayingCardMatchGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

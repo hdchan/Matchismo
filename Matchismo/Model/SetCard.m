@@ -13,13 +13,29 @@
 - (int)match:(NSArray *)otherCards {
     
     int score = 0;
+    if ([otherCards count] == 2) {
+        SetCard *firstCard = [otherCards objectAtIndex:0];
+        SetCard *secondCard = [otherCards objectAtIndex:1];
+        if ([self.shape isEqualToString:firstCard.shape] && [self.shape isEqualToString:secondCard.shape]) {
+            score = 3;
+        } else if (self.count == firstCard.count && self.count == secondCard.count) {
+            score = 12;
+        }
+    }
+
     
     return score;
 }
 
 - (NSString *)contents {
     
-    return [ NSString stringWithFormat:@"%d %@ %@", self.count, self.color, self.shape];
+    NSMutableString *cardContents = [[NSMutableString alloc] init];
+    
+    for (NSUInteger i = 1; i <= self.count; i++) {
+        [cardContents appendString:self.shape];
+    }
+    
+    return [ NSString stringWithFormat:@"%@", cardContents];
     
 }
 
@@ -43,7 +59,7 @@
     return @[[UIColor redColor], [UIColor greenColor], [UIColor blueColor]];
 }
 -(void)setColor:(UIColor *)color {
-    if ([[SetCard validColors] containsObject:color]) { //calling class methods valid suits
+    if ([[SetCard validColors] containsObject:color]) { 
         _color = color;
     }
 }
