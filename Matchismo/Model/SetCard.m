@@ -38,6 +38,20 @@
     return [ NSString stringWithFormat:@"%@", cardContents];
     
 }
+- (NSAttributedString *)attributedContents {
+    
+    NSMutableString *cardContents = [[NSMutableString alloc] init];
+    
+    for (NSUInteger i = 1; i <= self.count; i++) {
+        [cardContents appendString:self.shape];
+    }
+    
+    NSMutableAttributedString *attributedContents = [[NSMutableAttributedString alloc] initWithString:cardContents];
+    
+    //attributedContents addAttribute:<#(NSString *)#> value:<#(id)#> range:<#(NSRange)#>
+    
+    return attributedContents;
+}
 
 @synthesize shape = _shape;
 

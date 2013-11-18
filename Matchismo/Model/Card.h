@@ -20,6 +20,8 @@
 
 //nonatomic: are not threadsafe
 
+@property (strong, nonatomic) NSAttributedString *attributedContents;
+
 @property (nonatomic, getter = isFaceUp) BOOL faceUp; // setting the getter to another name
 @property (nonatomic, getter = isUnPlayable) BOOL unplayable;
 //Booleans are not pointers
